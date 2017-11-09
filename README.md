@@ -6,7 +6,7 @@
 - webpack + React + react-router + react-redux + redux-thunk + ES6 + antd
 
 ### 流程简图
-![image](images/liu.png)
+![image](https://github.com/Alley-23/React-Demo/blob/daily/0.0.1/todo-demo/images/liu.png)
 
 ### 实现功能
 
