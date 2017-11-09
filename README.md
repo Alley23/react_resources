@@ -1,8 +1,12 @@
 # React
 
 ## todo-demo
-### 技术栈：
+
+### 技术栈
 - webpack + React + react-router + react-redux + redux-thunk + ES6 + antd
+
+### 流程简图
+![image](images/liu.png)
 
 ### 实现功能
 
