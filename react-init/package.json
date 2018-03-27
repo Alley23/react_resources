@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack-dev-server --open",
-    "build": "webpack"
+    "server": "set NODE_ENV=dev && webpack-dev-server --colors --open",
+    "server-mac": "export NODE_ENV=dev && webpack-dev-server --colors --open",
+    "build": "set NODE_ENV=production && webpack --colors --profile --display-modules",
+    "build-mac": "set NODE_ENV=production && webpack --colors --profile --display-modules"
   },
   "author": "",
   "license": "ISC",

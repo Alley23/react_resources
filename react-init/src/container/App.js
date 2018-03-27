@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import Header from '../components/header';
 import Sidebar from '../components/sidebar';
-import Main from '../components/main';
+import './index.less';
 
 
 class App extends Component{
@@ -15,9 +15,11 @@ class App extends Component{
             <div>
                 <Header/>
                 <Sidebar/>
-                <Main>
-                    {this.props.children}
-                </Main>
+                <div className="main-right">
+                    <div className="container">
+                        {this.props.children}
+                    </div>
+                </div>
             </div>
         )
     }
