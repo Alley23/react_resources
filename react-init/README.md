@@ -14,5 +14,18 @@ cnpm install
 - 开始项目
 
 ```
+//win
 npm run server
+
+//mac
+npm run server-mac
+```
+- 打包项目
+
+```
+//win
+npm run build
+
+//mac
+npm run build-mac
 ```
