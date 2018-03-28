@@ -10,6 +10,7 @@ import { Router, Route, hashHistory, Link, IndexRoute} from 'react-router';
 import App from "./container/App";
 import IndexItem from "./components/index-item";
 import New from "./components/new";
+import Description from "./components/description";
 
 import "./index.less";
 
@@ -25,7 +26,8 @@ render(
         <Router history={hashHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={IndexItem} />
-                <Route path="new" component={New}/>
+                <Route path="new" component={New} />
+                <Route path="description/:id" component={Description}/>
             </Route>
         </Router>
     </Provider>, 
