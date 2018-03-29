@@ -6,10 +6,15 @@ import './index.less';
 class Filter extends Component{
     constructor() {
         super()
-
+        this.state = {
+            navNum: 1
+        }
     }
 
     filterHandle(num) {
+        this.setState({
+            navNum: num
+        })
         this.props.filterHandle(num)
     }
 
@@ -26,9 +31,24 @@ class Filter extends Component{
             <div className="todo-filter">
                 <p className="filter-title">条件筛选</p>
                 <div className="filter-type">
-                    <div onClick={this.filterHandle.bind(this,"1")}>全部<span>（{all}）</span></div>
-                    <div onClick={this.filterHandle.bind(this,"2")}>已做<span>（{done}）</span></div>
-                    <div onClick={this.filterHandle.bind(this,"3")}>未做<span>（{all - done}）</span></div>
+                    <div 
+                        className={this.state.navNum === "1" ? "current" : ""} 
+                        onClick={this.filterHandle.bind(this,"1")}
+                    >
+                    全部<span>（{all}）</span>
+                    </div>
+                    <div 
+                        className={this.state.navNum === "2" ? "current" : ""}
+                        onClick={this.filterHandle.bind(this,"2")}
+                    >
+                    已做<span>（{done}）</span>
+                    </div>
+                    <div 
+                    className={this.state.navNum === "3" ? "current" : ""}
+                    onClick={this.filterHandle.bind(this,"3")}
+                    >
+                    未做<span>（{all - done}）</span>
+                    </div>
                 </div>
             </div>
         )
