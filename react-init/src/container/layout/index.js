@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
+
+import { getSideBarData } from '../../actions/sidebar';
 
 import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
@@ -24,11 +27,15 @@ class App extends Component{
         }
     }
 
+    componentDidMount(){
+        this.props.dispatch(getSideBarData())
+    }
+
     render(){
         return(
             <div>
                 <Header/>
-                <Sidebar data={this.state.navData}/>
+                <Sidebar data={this.props.getNavData}/>
                 <div className="main-right">
                     <div className="container">
                         {this.props.children}
@@ -39,4 +46,12 @@ class App extends Component{
     }
 }
 
-export default App;
+
+
+export default connect(
+    (state) => {
+        return {
+            "getNavData": state.getSideBarData
+        };
+    }
+)(App);;
