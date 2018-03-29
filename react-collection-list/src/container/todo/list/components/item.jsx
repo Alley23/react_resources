@@ -23,13 +23,13 @@ class Item extends Component {
         this.setState({
             isDone: !this.state.isDone
         },() => {
-            this.props.changeDone(
-                {
-                    id: this.props.data.id,
-                    type: this.state.isDone ? 2 : 1,
-                    done: this.state.isDone
-                }
-            )
+            console.log('====================================');
+            console.log(this.state.isDone);
+            console.log('====================================');
+            this.props.changeDone({
+                id: this.props.data.id,
+                done: this.state.isDone
+            })
         })
         
     }

@@ -5,19 +5,16 @@ let initstate = [
         "id": 1,
         "done": true,
         "text": "今天去吃什么？",
-        "type": 2
     },
     {
         "id": 2,
         "done": false,
         "text": "今天去吃什么？",
-        "type": 1
     },
     {
         "id": 3,
         "done": false,
         "text": "今天去吃什么？",
-        "type": 1
     }
 ]
 
@@ -39,7 +36,7 @@ export default function todoReduces(state = initstate, action) {
             })
         case CHANGE_DONE:
             return state.map((item) => {
-                return item.id != action.data.id ? item : Object.assign(item, action.data)
+                return item.id != action.data.id ? item : Object.assign({},item, action.data);
             })
         default:
             return state

@@ -37,7 +37,7 @@ export const CHANGE_DONE = "CHANGE_DONE";
 export const getListItemData = () => ({ 'type': GET_LIST_ITEM})
 export const addItem = (value) => ({ 'type': ADD_ITEM, 'data': value })
 export const removeItem = (id) => ({ 'type': REMOVE_ITEM, 'data': id })
-export const changeDone = (value) => ({ 'type': CHANGE_DONE, 'data': value})
+export const changeDone = (data) => ({ 'type': CHANGE_DONE, 'data': data})
 
 
 // export const getSideBarData = () => ({ "type": GET_NAV_LIST})

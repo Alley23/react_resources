@@ -9,10 +9,14 @@ import List from './list'
 class Todo extends Component{
     constructor() {
         super()
+        this.state = {
+            num: 1
+        }
 
         this.addItemHandle = this.addItemHandle.bind(this)
         this.removeHandle = this.removeHandle.bind(this)
         this.changeDone = this.changeDone.bind(this)
+        this.filterHandle = this.filterHandle.bind(this)
     }
 
     componentDidMount() {
@@ -28,18 +32,42 @@ class Todo extends Component{
         this.props.dispatch(removeItem(id))
     }
     //改变状态
-    changeDone(value) {
-        this.props.dispatch(changeDone(value))
+    changeDone(id) {
+        this.props.dispatch(changeDone(id))
     }   
     
+    //过滤
+    filterHandle(num) {
+        console.log('====================================');
+        console.log(num);
+        console.log('====================================');
+        this.setState({
+            num : num
+        })
+    }
     
     render() {
+
+        let filterData = (function () {
+            if (this.state.num == 1) {
+                return this.props.getListItem;
+            } else if (this.state.num == 2) {
+                return this.props.getListItem.filter((item) => {
+                    return item.done
+                })
+            } else if (this.state.num == 3) {
+                return this.props.getListItem.filter((item) => {
+                    return !item.done
+                })
+            }
+        }).call(this);
+        
         return(
             <div>
                 <Heade addItemHandle={this.addItemHandle}/>
-                <Filter/>
+                <Filter filterHandle={this.filterHandle}/>
                 <List 
-                    data={this.props.getListItem} 
+                    data={filterData} 
                     removeHandle={this.removeHandle}
                     changeDone={this.changeDone}
                 />
@@ -54,5 +82,5 @@ export default connect(
             "getListItem": state.getListItem
         };
     }
-)(Todo);;
+)(Todo);
 
