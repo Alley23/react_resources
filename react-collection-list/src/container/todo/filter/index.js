@@ -7,7 +7,6 @@ class Filter extends Component{
     constructor() {
         super()
 
-        this.filterHandle = this.filterHandle.bind(this)
     }
 
     filterHandle(num) {
@@ -24,12 +23,12 @@ class Filter extends Component{
         })
 
         return(
-            <div className="todo-filter" data={JSON.stringify(this.props.getListItem)}>
+            <div className="todo-filter">
                 <p className="filter-title">条件筛选</p>
                 <div className="filter-type">
-                    <div onClick={this.filterHandle(1)}>全部<span>（{all}）</span></div>
-                    <div onClick={this.filterHandle(2)}>已做<span>（{done}）</span></div>
-                    <div onClick={this.filterHandle(3)}>未做<span>（{all - done}）</span></div>
+                    <div onClick={this.filterHandle.bind(this,"1")}>全部<span>（{all}）</span></div>
+                    <div onClick={this.filterHandle.bind(this,"2")}>已做<span>（{done}）</span></div>
+                    <div onClick={this.filterHandle.bind(this,"3")}>未做<span>（{all - done}）</span></div>
                 </div>
             </div>
         )

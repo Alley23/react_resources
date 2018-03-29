@@ -10,7 +10,7 @@ class Todo extends Component{
     constructor() {
         super()
         this.state = {
-            num: 1
+            filterNum: 1
         }
 
         this.addItemHandle = this.addItemHandle.bind(this)
@@ -38,27 +38,25 @@ class Todo extends Component{
     
     //过滤
     filterHandle(num) {
-        console.log('====================================');
-        console.log(num);
-        console.log('====================================');
         this.setState({
-            num : num
+            filterNum : num
         })
     }
     
     render() {
 
-        let filterData = (function () {
-            if (this.state.num == 1) {
+        //在这里处理过滤显示的数据
+        let filterData = (function() {
+            if (this.state.filterNum == 1) {
                 return this.props.getListItem;
-            } else if (this.state.num == 2) {
+            } else if (this.state.filterNum == 2) {
                 return this.props.getListItem.filter((item) => {
                     return item.done
-                })
-            } else if (this.state.num == 3) {
+                }) 
+            } else if (this.state.filterNum == 3) {
                 return this.props.getListItem.filter((item) => {
                     return !item.done
-                })
+                }) 
             }
         }).call(this);
         
