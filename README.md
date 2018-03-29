@@ -10,6 +10,5 @@
 
 
 ### 01-todo-demo 项目
-![image](https://github.com/Alley-23/React-Demo/blob/daily/0.0.1/todo-demo/images/demo.gif)
 
 ### 02-react-project 项目
