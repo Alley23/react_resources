@@ -53,7 +53,7 @@ class IndexItem extends Component{
                 {
                     this.state.data && this.state.data.map((item, inde) => {
                         return(
-                            <div className="new-item" key={item.id}>
+                            <div className="i-item" key={item.id}>
                                 <h1 className="title">{item.title}</h1>
                                 <p className="desc">{item.desc}</p>
                                 <Link to={"/desc/"+item.id} className="herf">查看全部内容</Link>

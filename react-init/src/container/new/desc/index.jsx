@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import './index.less';
 
 
-class IndexItem extends Component{
+class Description extends Component{
     constructor(){
         super()
         this.state = {
@@ -50,20 +50,10 @@ class IndexItem extends Component{
     render(){
         return(
             <div className="new-list">
-                {
-                    this.state.data && this.state.data.map((item, inde) => {
-                        return(
-                            <div className="new-item" key={item.id}>
-                                <h1 className="title">{item.title}</h1>
-                                <p className="desc">{item.desc}</p>
-                                <Link to={"/desc/"+item.id} className="herf">查看全部内容</Link>
-                            </div>
-                        )
-                    })
-                }
+                Description
             </div>
         )
     }
 }
 
-export default IndexItem;
+export default Description;
