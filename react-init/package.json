@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack-dev-server --open",
-    "build": "webpack"
+    "server": "set NODE_ENV=dev && webpack-dev-server --colors --open",
+    "server-mac": "export NODE_ENV=dev && webpack-dev-server --colors --open",
+    "build": "set NODE_ENV=production && webpack --colors --profile --display-modules",
+    "build-mac": "set NODE_ENV=production && webpack --colors --profile --display-modules"
   },
   "author": "",
   "license": "ISC",
@@ -31,10 +33,13 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^3.2.1",
-    "redux": "^3.7.2"
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   }
 }

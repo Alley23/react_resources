@@ -1,10 +1,11 @@
 const path = require('path');
-const HtmlPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const HtmlPlugin = require('html-webpack-plugin');
 const Uglify = require('uglifyjs-webpack-plugin');
 
+var env = process.env.NODE_ENV;
 
-module.exports = {
+var config = {
     devtool: 'eval-source-map',
     entry: {
         entry: './src/index.js'
@@ -31,11 +32,7 @@ module.exports = {
             }, {
                 loader: "css-loader"
             }, {
-                loader: "less-loader", 
-                options: {
-                    strictMath: true,
-                    noIeCompat: true
-                }
+                loader: "less-loader"
             }]
         },
         {
@@ -49,9 +46,14 @@ module.exports = {
         }
       ]  
     },
+    plugins:[
+        new HtmlPlugin({
+            template: './src/index.html'
+        })
+    ],
     devServer: {
         //设置基本目录结构
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, 'scr'),
         //服务器的IP地址，可以使用IP也可以使用localhost
         host: 'localhost',
         //服务端压缩是否开启
@@ -59,7 +61,10 @@ module.exports = {
         //配置服务端口号
         port: 8888
     },
-    plugins: [
+};
+
+if(env === 'production'){
+    config.plugins = [
         new HtmlPlugin({
             minify: {
                 //是对html文件进行压缩，removeAttrubuteQuotes是却掉属性的双引号。
@@ -69,7 +74,8 @@ module.exports = {
             template: './src/index.html'  //是要打包的html模版路径和文件名称。
         }),
         new Uglify(),
-        new webpack.BannerPlugin('kai-Li测试！！')
+        new webpack.BannerPlugin('kai-Li测试！！'),
     ]
-    
-};
+}
+
+module.exports = config

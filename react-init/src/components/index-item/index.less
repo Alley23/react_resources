@@ -1,0 +1,40 @@
+.list-box{
+    &::after {
+        content: ""; 
+        display: block; 
+        height:0; 
+        clear:both;
+        visibility: hidden;
+    }
+    .i-item{
+        float: left;
+        width: 260px;
+        height: 220px;
+        background-color: #fdfdfd;
+        border-radius: 2px;
+        border: 1px solid #188bf7;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        transition: all ease .4s 0s;
+        cursor: pointer;
+        &:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px -5px #c2e2fb;
+            border: 1px solid #188bf7;
+            background-color: #fff;
+        }
+        .title{
+            line-height: 120px;
+            font-size: 30px;
+            text-align: center;
+            color: #333;
+        }
+        .desc{
+            line-height: 30px;
+            font-size: 18px;
+            text-align: center;
+            color: #999;
+        }
+    }
+}
+
