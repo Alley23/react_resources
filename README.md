@@ -14,3 +14,4 @@
 ![image](https://github.com/Alley23/react_project/blob/master/todo-demo/images/demo.gif)
 
 ### 02-react-project 项目
+![image](https://github.com/Alley23/react_project/blob/daily/0.0.1/react-collection-list/src/images/show.jpg)
