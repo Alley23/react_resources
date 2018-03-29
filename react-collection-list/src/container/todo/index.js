@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { getListItemData, addItem, removeItem, changeDone} from '../../actions/todo';
+import { getListItemData, addItem, removeItem, changeDone, editEnd} from '../../actions/todo';
 
 import Heade from './header'
 import Filter from './filter'
@@ -17,6 +17,7 @@ class Todo extends Component{
         this.removeHandle = this.removeHandle.bind(this)
         this.changeDone = this.changeDone.bind(this)
         this.filterHandle = this.filterHandle.bind(this)
+        this.editEndHandle = this.editEndHandle.bind(this)
     }
 
     componentDidMount() {
@@ -35,6 +36,10 @@ class Todo extends Component{
     changeDone(id) {
         this.props.dispatch(changeDone(id))
     }   
+    //编辑完成
+    editEndHandle(data) {
+        this.props.dispatch(editEnd(data))
+    }
     
     //过滤
     filterHandle(num) {
@@ -68,6 +73,7 @@ class Todo extends Component{
                     data={filterData} 
                     removeHandle={this.removeHandle}
                     changeDone={this.changeDone}
+                    editEndHandle={this.editEndHandle}
                 />
             </div>
         )

@@ -4,6 +4,7 @@ export const GET_LIST_ITEM = 'GET_LIST_ITEM';
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = "REMOVE_ITEM";
 export const CHANGE_DONE = "CHANGE_DONE";
+export const EDIT_END = "EDIT_END";
 //数据请求
 // export const getListItem = () => (dispatch) => {
 //     axios.get("../mock/todo.json")
@@ -38,6 +39,8 @@ export const getListItemData = () => ({ 'type': GET_LIST_ITEM})
 export const addItem = (value) => ({ 'type': ADD_ITEM, 'data': value })
 export const removeItem = (id) => ({ 'type': REMOVE_ITEM, 'data': id })
 export const changeDone = (data) => ({ 'type': CHANGE_DONE, 'data': data})
+export const editEnd = (data) => ({ 'type': EDIT_END, 'data': data})
+
 
 
 // export const getSideBarData = () => ({ "type": GET_NAV_LIST})

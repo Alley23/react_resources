@@ -16,6 +16,7 @@ class List extends Component{
                         data={item} 
                         removeHandle={this.props.removeHandle}
                         changeDone={this.props.changeDone}
+                        editEndHandle={this.props.editEndHandle}
                         />
                     })
                 }

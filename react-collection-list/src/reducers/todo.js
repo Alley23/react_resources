@@ -1,4 +1,4 @@
-import { GET_LIST_ITEM, ADD_ITEM, REMOVE_ITEM, CHANGE_DONE} from '../actions/todo'
+import { GET_LIST_ITEM, ADD_ITEM, REMOVE_ITEM, CHANGE_DONE, EDIT_END} from '../actions/todo'
 // 1---已做   2---未做
 let initstate = [
     {
@@ -35,6 +35,10 @@ export default function todoReduces(state = initstate, action) {
                 return item.id != action.data
             })
         case CHANGE_DONE:
+            return state.map((item) => {
+                return item.id != action.data.id ? item : Object.assign({},item, action.data);
+            })
+        case EDIT_END:
             return state.map((item) => {
                 return item.id != action.data.id ? item : Object.assign({},item, action.data);
             })
