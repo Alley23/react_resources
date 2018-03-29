@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Message from '../../../../components/message/index.jsx';
 import '../index.less';
 class Item extends Component {
     constructor(props) {
@@ -44,7 +45,7 @@ class Item extends Component {
     //完成
     endBtn() {
         if(!this.state.normalText){
-            alert("请填写内容！！")
+            this.refs.message.waring("请填写内容！")
             return
         }
         this.setState({
@@ -85,10 +86,13 @@ class Item extends Component {
                 
                 <div className="list-edit">
                     {
-                        this.state.isEdit ? <span onClick={this.editBtn}>编辑</span> : <span onClick={this.endBtn}>完成</span>
+                        this.state.isEdit ? 
+                            (this.state.isDone ? " " : <span onClick={this.editBtn}>编辑</span>) 
+                        : <span onClick={this.endBtn}>完成</span>
                     }
                     <span onClick={this.removeHandle}>删除</span>
                 </div>
+                <Message ref="message"/>
             </li>
         )
     }

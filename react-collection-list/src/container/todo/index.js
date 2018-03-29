@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import Message from '../../components/message/index.jsx';
 import { getListItemData, addItem, removeItem, changeDone, editEnd} from '../../actions/todo';
 
 import Heade from './header'
@@ -31,6 +32,7 @@ class Todo extends Component{
     //删除
     removeHandle(id) {
         this.props.dispatch(removeItem(id))
+        this.refs.message.success("删除成功!")
     }
     //改变状态
     changeDone(id) {
@@ -39,6 +41,7 @@ class Todo extends Component{
     //编辑完成
     editEndHandle(data) {
         this.props.dispatch(editEnd(data))
+        this.refs.message.success("编辑完成!")
     }
     
     //过滤
@@ -75,6 +78,7 @@ class Todo extends Component{
                     changeDone={this.changeDone}
                     editEndHandle={this.editEndHandle}
                 />
+                <Message ref="message"/>
             </div>
         )
     }   

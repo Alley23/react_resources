@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Message from '../../../components/message/index.jsx';
 import './index.less';
 class Header extends Component{
     constructor() {
@@ -27,10 +28,11 @@ class Header extends Component{
     addItemHandle() {
         //判断是否有值
         if (!this.state.value) {
-            alert("请填写内容！！！")
+            this.refs.message.waring("请填写内容！")
             return
         }
         this.props.addItemHandle(this.state.value)
+        this.refs.message.success("添加成功！")
         this.setState({
             value: ''
         })
@@ -41,6 +43,7 @@ class Header extends Component{
             <div className="todo-header">
                 <input type='text' placeholder="请输入事项" onChange={this.changeHandle} onKeyDown={this.keydownHandle} value={this.state.value}/>
                 <span onClick={this.addItemHandle}>添加</span>
+                <Message ref="message"/>
             </div>
         )
     }
