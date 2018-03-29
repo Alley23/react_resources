@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import Item from './components/item.jsx'
 import './index.less';
 class List extends Component{
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
     }
 
     render() {
         return(
             <ul className="todo-list">
-                
-                <li>
+                {
+                    this.props.data && this.props.data.map((item, index) => {
+                        return <Item 
+                        key={item.id} 
+                        data={item} 
+                        removeHandle={this.props.removeHandle}
+                        changeDone={this.props.changeDone}
+                        />
+                    })
+                }
+                {/* <li>
                     <input type='checkbox' /><span>测试文本</span>
                     <div className="list-edit">
                         <span>编辑</span>
@@ -26,7 +35,7 @@ class List extends Component{
                 </li>
                 <li>
                     <input type='checkbox' /><span>测试文本</span>
-                </li>
+                </li> */}
             </ul>
         )
     }
