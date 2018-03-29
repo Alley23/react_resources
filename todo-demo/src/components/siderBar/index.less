@@ -1,0 +1,48 @@
+.siderBar{ 
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #a5d7ff;
+    background-color: #cce8ff;
+    margin-bottom: 5px;
+    li{
+        height: 100%;
+        float: left;
+        width: 33.333%;
+        span{
+            display: block;
+            line-height: 40px;
+            text-align: center;
+            font-size: 14px;
+            &:nth-child(2) {
+                color: #108ee9;
+                font-weight: bold;
+                line-height: 20px;
+            }
+        }
+    }
+}
+.nav{
+    height: 30px;
+    margin: 5px 0;
+    border: 1px solid #a5d7ff;
+    background-color: #cce8ff;
+    .item,.active{
+        float: left;
+        width: 33.333%;
+        line-height: 28px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: bold;
+        &:hover{
+            background-color: #b5deff;
+            color: #108ee9;
+        }
+        &:active{
+            color: #0077cc;
+        }
+    }
+    .active{
+        background-color: #b5deff;
+        color: #108ee9;
+    }
+}
