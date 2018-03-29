@@ -19,7 +19,7 @@ var config = {
     module: {
       rules:[
         {
-            test: /\.js$/,
+            test: /(\.jsx|\.js)$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',

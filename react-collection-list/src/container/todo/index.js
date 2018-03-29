@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Heade from './header'
+import Filter from './filter'
+import List from './list'
+
 class Todo extends Component{
     constructor() {
         super()
@@ -9,7 +13,9 @@ class Todo extends Component{
     render() {
         return(
             <div>
-                jkjkn
+                <Heade/>
+                <Filter/>
+                <List/>
             </div>
         )
     }   
