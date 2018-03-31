@@ -7,6 +7,7 @@ class Message extends Component{
         this.state = {
             type: 1,
             text: '',
+            delayTime: 3000,
             isShow: false
         }
     }
@@ -58,7 +59,7 @@ class Message extends Component{
                 isShow: false,
                 type: 'normal',
             })
-        },3000)
+        },this.state.delayTime)
     }
 
     getType(num) {
