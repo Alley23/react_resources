@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import './index.scss';
+import styles from './index.scss';
 
 class Message extends Component{
     constructor(){
@@ -55,15 +55,16 @@ class Message extends Component{
         let _this = this
         setTimeout(() => {
             _this.setState({
-                isShow: false
+                isShow: false,
+                type: 'normal',
             })
         },3000)
     }
 
     render() {
         return(
-            <div className={"m-content "+ this.state.type + (this.state.isShow ? " m-show" : " m-hide")}>
-                <div className="m-text">
+            <div className={styles.mContent +" "+ this.state.type + (this.state.isShow ? " "+styles.mShow : " "+styles.mHide)}>
+                <div>
                     {this.state.text}  
                 </div>
             </div>
