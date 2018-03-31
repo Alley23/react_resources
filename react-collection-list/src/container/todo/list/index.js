@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Item from './components/item.jsx'
-import './index.scss';
+import styles from './index.scss';
 class List extends Component{
     constructor(props) {
         super(props)
@@ -8,7 +8,7 @@ class List extends Component{
 
     render() {
         return(
-            <ul className="todo-list">
+            <ul className={styles.todoList}>
                 {
                     this.props.data && this.props.data.map((item, index) => {
                         return <Item 

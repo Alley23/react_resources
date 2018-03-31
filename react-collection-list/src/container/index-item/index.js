@@ -1,6 +1,5 @@
 import React,{ Component } from 'react';
-import { Link } from 'react-router';
-import './index.scss';
+import styles from './index.scss';
 
 
 class IndexItem extends Component{
@@ -33,30 +32,19 @@ class IndexItem extends Component{
                     "title": "A-5-005",
                     "desc": "A-5-005 测试"
                 },
-                {
-                    "id": 6,
-                    "title": "A-6-006",
-                    "desc": "A-6-006 测试"
-                },
-                {
-                    "id": 7,
-                    "title": "A-7-007",
-                    "desc": "A-7-007 测试"
-                },
             ]
         }
     }
 
     render(){
         return(
-            <div className="new-list">
+            <div className={styles.listBox}>
                 {
                     this.state.data && this.state.data.map((item, inde) => {
                         return(
-                            <div className="new-item" key={item.id}>
-                                <h1 className="title">{item.title}</h1>
-                                <p className="desc">{item.desc}</p>
-                                <Link to={"/desc/"+item.id} className="herf">查看全部内容</Link>
+                            <div className={styles.iItem} key={item.id}>
+                                <h1 className={styles.title}>{item.title}</h1>
+                                <p className={styles.desc}>{item.desc}</p>
                             </div>
                         )
                     })

@@ -8,9 +8,9 @@ import reducers from './reducers'
 import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router';
 
 import Layout from "./container/layout";
-import IndexItem from "./components/index-item";
-import New from "./components/new";
-import Description from "./components/description";
+import IndexItem from "./container/index-item";
+import New from "./container/new";
+import Description from "./container/description";
 import Todo from "./container/todo";
 
 import './index.scss';

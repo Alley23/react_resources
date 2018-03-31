@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import "./index.scss";
+import styles from "./index.scss";
 
 class Header extends Component {
     constructor(props){
@@ -9,13 +9,13 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="main-left">
+            <div className={styles.mainLeft}>
                 <ul>
                 {
                     this.props.data && this.props.data.map((item, index) => {
                         return(
                             <li>
-                                <Link className="nav" key={item.id} to={item.url}>{item.title}</Link>
+                                <Link className={styles.nav} key={item.id} to={item.url}>{item.title}</Link>
                             </li>
                         )
                     })

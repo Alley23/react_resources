@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './index.scss';
+import styles from './index.scss';
 
 
 class Filter extends Component{
@@ -28,23 +28,23 @@ class Filter extends Component{
         })
 
         return(
-            <div className="todo-filter">
-                <p className="filter-title">条件筛选</p>
-                <div className="filter-type">
+            <div className={styles.todoFilter}>
+                <p className={styles.filterTitle}>条件筛选</p>
+                <div className={styles.filterType}>
                     <div 
-                        className={this.state.navNum === "1" ? "current" : ""} 
+                        className={this.state.navNum === "1" ? styles.current : ""} 
                         onClick={this.filterHandle.bind(this,"1")}
                     >
                     全部<span>（{all}）</span>
                     </div>
                     <div 
-                        className={this.state.navNum === "2" ? "current" : ""}
+                        className={this.state.navNum === "2" ? styles.current : ""}
                         onClick={this.filterHandle.bind(this,"2")}
                     >
                     已做<span>（{done}）</span>
                     </div>
                     <div 
-                    className={this.state.navNum === "3" ? "current" : ""}
+                        className={this.state.navNum === "3" ? styles.current : ""}
                     onClick={this.filterHandle.bind(this,"3")}
                     >
                     未做<span>（{all - done}）</span>

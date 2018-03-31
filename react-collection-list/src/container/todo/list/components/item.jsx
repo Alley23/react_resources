@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Message from '../../../../components/message/index.jsx';
-import '../index.scss';
+import styles from '../index.scss';
 class Item extends Component {
     constructor(props) {
         super(props)
@@ -76,15 +76,15 @@ class Item extends Component {
                 <input type='checkbox' onChange={this.chengeDone} checked={this.state.isDone ? true : false}/>
                 {
                     this.state.isEdit ? 
-                    <span className={this.state.isDone ? "done" : ""}>
+                        <span className={this.state.isDone ? styles.done : ""}>
                         {this.props.data.text}
                     </span>
                      : 
-                    <input className="input-text" type='text' value={this.state.normalText} onChange={this.editText} autoFocus/>
+                    <input className={styles.inputText} type='text' value={this.state.normalText} onChange={this.editText} autoFocus/>
                 }
                 
                 
-                <div className="list-edit">
+                <div className={styles.listEdit}>
                     {
                         this.state.isEdit ? 
                             (this.state.isDone ? " " : <span onClick={this.editBtn}>编辑</span>) 

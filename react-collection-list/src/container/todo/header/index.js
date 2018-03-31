@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Message from '../../../components/message/index.jsx';
-import './index.scss';
+import styles from './index.scss';
 class Header extends Component{
     constructor() {
         super()
@@ -40,7 +40,7 @@ class Header extends Component{
 
     render() {
         return(
-            <div className="todo-header">
+            <div className={styles.todoHeader}>
                 <input type='text' placeholder="请输入事项" onChange={this.changeHandle} onKeyDown={this.keydownHandle} value={this.state.value}/>
                 <span onClick={this.addItemHandle}>添加</span>
                 <Message ref="message"/>

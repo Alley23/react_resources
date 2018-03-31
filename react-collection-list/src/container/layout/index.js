@@ -5,7 +5,7 @@ import { getSideBarData } from '../../actions/sidebar';
 
 import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
-import './index.scss';
+import styles from './index.scss';
 
 
 class App extends Component{
@@ -36,8 +36,8 @@ class App extends Component{
             <div>
                 <Header/>
                 <Sidebar data={this.props.getNavData}/>
-                <div className="main-right">
-                    <div className="container">
+                <div className={styles.mainRight}>
+                    <div className={styles.container}>
                         {this.props.children}
                     </div>
                 </div>

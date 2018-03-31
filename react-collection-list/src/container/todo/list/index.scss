@@ -1,4 +1,4 @@
-.todo-list{
+.todoList{
     li{
         font-size: 16px;
         padding: 15px; 
@@ -11,7 +11,7 @@
         input{
             margin-right: 20px;
         }
-        .list-edit{
+        .listEdit{
             float: right;
             span{
                 color: #999;
@@ -26,7 +26,7 @@
         .done{
             text-decoration: line-through
         }
-        .input-text{
+        .inputText{
             outline: none;
             border: none;
             font-size: 16px;

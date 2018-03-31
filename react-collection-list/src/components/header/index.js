@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import "./index.scss";
+import styles from "./index.scss";
 
 
 class Header extends Component{
     render() {
         return(
-            <div className="main-top">
-                <div className="logo"></div>
+            <div className={styles.mainTop}>
+                <div className={styles.logo}></div>
             </div>
         )
     }
