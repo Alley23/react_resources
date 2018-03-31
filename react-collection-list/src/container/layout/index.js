@@ -5,7 +5,7 @@ import { getSideBarData } from '../../actions/sidebar';
 
 import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
-import './index.less';
+import './index.scss';
 
 
 class App extends Component{

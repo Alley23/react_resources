@@ -13,7 +13,7 @@ import New from "./components/new";
 import Description from "./components/description";
 import Todo from "./container/todo";
 
-import './index.less';
+import './index.scss';
 
 const loggerMiddleware = createLogger()
 

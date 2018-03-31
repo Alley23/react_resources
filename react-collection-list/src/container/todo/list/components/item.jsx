@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Message from '../../../../components/message/index.jsx';
-import '../index.less';
+import '../index.scss';
 class Item extends Component {
     constructor(props) {
         super(props)

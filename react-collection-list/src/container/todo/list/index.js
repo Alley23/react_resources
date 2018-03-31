@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Item from './components/item.jsx'
-import './index.less';
+import './index.scss';
 class List extends Component{
     constructor(props) {
         super(props)
