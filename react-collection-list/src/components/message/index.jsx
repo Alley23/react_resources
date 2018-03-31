@@ -5,7 +5,7 @@ class Message extends Component{
     constructor(){
         super()
         this.state = {
-            type: 'noraml',
+            type: 1,
             text: '',
             isShow: false
         }
@@ -13,7 +13,7 @@ class Message extends Component{
 
     waring(data) {
         this.setState({
-            type: 'waring',
+            type: 1,
             text: data,
             isShow: true
         }, () => {
@@ -23,7 +23,7 @@ class Message extends Component{
 
     error(data) {
         this.setState({
-            type: 'error',
+            type: 2,
             text: data,
             isShow: true
         }, () => {
@@ -33,7 +33,7 @@ class Message extends Component{
 
     success(data) {
         this.setState({
-            type: 'success',
+            type: 3,
             text: data,
             isShow: true
         }, () => {
@@ -43,7 +43,7 @@ class Message extends Component{
 
     normal(data) {
         this.setState({
-            type: 'noraml',
+            type: 1,
             text: data,
             isShow: true
         }, () => {
@@ -61,9 +61,21 @@ class Message extends Component{
         },3000)
     }
 
+    getType(num) {
+        if (num === 1) {
+            return styles.waring
+        }else if(num === 2){
+            return styles.error
+        }else if(num === 3){
+            return styles.success
+        }else{
+            return styles.normal
+        }
+    }
+
     render() {
         return(
-            <div className={styles.mContent +" "+ this.state.type + (this.state.isShow ? " "+styles.mShow : " "+styles.mHide)}>
+            <div className={styles.mContent +" "+ this.getType(this.state.type) + (this.state.isShow ? " "+styles.mShow : " "+styles.mHide)}>
                 <div>
                     {this.state.text}  
                 </div>
