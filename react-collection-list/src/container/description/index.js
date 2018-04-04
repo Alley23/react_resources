@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router';
-import './index.scss';
+import styles from './index.scss';
 
 
 class Description extends Component{
@@ -49,7 +49,7 @@ class Description extends Component{
 
     render(){
         return(
-            <div className="new-list">
+            <div className={styles.newList}>
                 Description
             </div>
         )
