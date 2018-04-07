@@ -40,7 +40,7 @@ class IndexItem extends Component{
         return(
             <div className={styles.listBox}>
                 {
-                    this.state.data && this.state.data.map((item, inde) => {
+                    this.state.data && this.state.data.map((item, index) => {
                         return(
                             <div className={styles.iItem} key={item.id}>
                                 <h1 className={styles.title}>{item.title}</h1>
