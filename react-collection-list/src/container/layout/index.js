@@ -11,20 +11,6 @@ import styles from './index.scss';
 class App extends Component{
     constructor(props) {
         super(props)
-        this.state = {
-            navData: [
-                {
-                    'id': 1,
-                    'url': '/',
-                    'title': 'Home Test'
-                },
-                {
-                    'id': 2,
-                    'url': '/new',
-                    'title': 'New Test'    
-                },
-            ]
-        }
     }
 
     componentDidMount(){
