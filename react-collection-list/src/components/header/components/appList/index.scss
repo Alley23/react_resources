@@ -51,7 +51,13 @@
                 padding: 20px;
                 box-sizing: border-box;
                 ul{
-                    overflow: hidden;
+                    // overflow: hidden;
+                    &:after{
+                        content: ""; 
+                        display: block; 
+                        height:0; 
+                        clear:both; visibility: hidden;
+                    }
                     .item{
                         position: relative;
                         float: left;
