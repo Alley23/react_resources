@@ -1,0 +1,27 @@
+.todoHeader{
+    overflow: hidden;
+    margin-bottom: 20px;
+    input{
+        float: left;
+        outline: none;
+        height: 40px;
+        width: 280px;
+        border: 1px solid #eee;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding-left: 10px;
+    }
+    span{
+        float: left;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #eee;
+        cursor: pointer;
+        font-size: 16px;
+        &:hover{
+            background-color: #ccc;
+        }
+    }
+}

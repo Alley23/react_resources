@@ -1,0 +1,39 @@
+.mContent{
+    position: fixed;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 1s ease 0s;
+    z-index: 999;
+    box-shadow: 0px 5px 13px -6px #999;
+}
+.mHide{
+    display: none;
+    top: 0px;
+}
+
+.mShow{
+    display: block;
+    top: 18px;
+}
+.error{
+    color: #ff0000;
+    background-color: #ffe1e1;
+}
+
+.waring{
+    color: #ff7300;
+    background-color: #fde8d6;
+}
+
+.success{
+    color: #009c11;
+    background-color: #ddffe1;
+}
+
+.normal{
+    color: #666;
+    background-color: #fff;
+}

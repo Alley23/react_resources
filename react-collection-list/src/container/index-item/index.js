@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import './index.less';
+import styles from './index.scss';
 
 
 class IndexItem extends Component{
@@ -38,13 +38,13 @@ class IndexItem extends Component{
 
     render(){
         return(
-            <div className="list-box">
+            <div className={styles.listBox}>
                 {
-                    this.state.data && this.state.data.map((item, inde) => {
+                    this.state.data && this.state.data.map((item, index) => {
                         return(
-                            <div className="i-item" key={item.id}>
-                                <h1 className="title">{item.title}</h1>
-                                <p className="desc">{item.desc}</p>
+                            <div className={styles.iItem} key={item.id}>
+                                <h1 className={styles.title}>{item.title}</h1>
+                                <p className={styles.desc}>{item.desc}</p>
                             </div>
                         )
                     })

@@ -5,26 +5,12 @@ import { getSideBarData } from '../../actions/sidebar';
 
 import Header from '../../components/header';
 import Sidebar from '../../components/sidebar';
-import './index.less';
+import styles from './index.scss';
 
 
 class App extends Component{
     constructor(props) {
         super(props)
-        this.state = {
-            navData: [
-                {
-                    'id': 1,
-                    'url': '/',
-                    'title': 'Home Test'
-                },
-                {
-                    'id': 2,
-                    'url': '/new',
-                    'title': 'New Test'    
-                },
-            ]
-        }
     }
 
     componentDidMount(){
@@ -36,8 +22,8 @@ class App extends Component{
             <div>
                 <Header/>
                 <Sidebar data={this.props.getNavData}/>
-                <div className="main-right">
-                    <div className="container">
+                <div className={styles.mainRight}>
+                    <div className={styles.container}>
                         {this.props.children}
                     </div>
                 </div>

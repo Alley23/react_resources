@@ -1,0 +1,36 @@
+.todoList{
+    li{
+        font-size: 16px;
+        padding: 15px; 
+        &:nth-child(2n+1){
+            background-color: #f3f3f3;
+        }
+        &:hover{
+            background-color: #fff9ee;
+        }
+        input{
+            margin-right: 20px;
+        }
+        .listEdit{
+            float: right;
+            span{
+                color: #999;
+                font-size: 14px;
+                margin-left: 10px;
+                cursor: pointer;
+                &:hover{
+                    color: #2196f3;
+                }
+            }
+        }
+        .done{
+            text-decoration: line-through
+        }
+        .inputText{
+            outline: none;
+            border: none;
+            font-size: 16px;
+            background: none !important;
+        }
+    }
+}

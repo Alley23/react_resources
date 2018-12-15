@@ -1,4 +1,4 @@
-.list-box{
+.listBox{
     &::after {
         content: ""; 
         display: block; 
@@ -6,7 +6,7 @@
         clear:both;
         visibility: hidden;
     }
-    .i-item{
+    .iItem{
         float: left;
         width: 260px;
         height: 220px;

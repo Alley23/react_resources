@@ -1,0 +1,115 @@
+.headerUser{
+    float: right;
+    margin-right: 20px;
+    width: 200px;
+    height: 100%;
+    border-left: 1px solid #f2f5f9;
+    position: relative;
+    .toggleBtn{
+        height: 100%;
+        cursor: pointer;
+        &:after{
+            content: ""; 
+            display: block; 
+            height:0; 
+            clear:both; visibility: hidden;
+        }
+        &:hover{
+            background-color:#f2f5f9;
+        }
+        .userImg{
+            float: left;
+            width: 40px;
+            height: 40px;
+            background-color: azure;
+            margin: 10px 10px 0 10px;
+            border-radius: 50%;
+        }
+        .userInfo{
+            float: left;
+            padding-top: 8px;
+            .name{
+                font-size: 16px;
+                color: #666;
+            }            
+            .department{
+                font-size: 14px;
+                color: #888;
+            }
+        }
+        .userIcon{
+            float: right;
+            padding-right: 10px;
+            width: 8px;
+            height: 100%;
+            background-color: #f2f5f9;
+        }
+    }
+    .dropDownMenu{
+        position: absolute;
+        right: -20px;
+        width: 280px;
+        min-height: 100px;
+        background-color: #fff;
+        box-shadow: -4px 4px 10px -6px #adadad;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-top: 1px solid #f2f5f9;
+        box-sizing: border-box;
+        ul{
+            padding: 20px;
+            padding-bottom: 0px;
+            &:after{
+                content: ""; 
+                display: block; 
+                height:0; 
+                clear:both; visibility: hidden;
+            }
+            li{
+                padding: 10px;
+                cursor: pointer;
+                &:hover{
+                    background-color:#f2f5f9;
+                }
+                &:after{
+                    content: ""; 
+                    display: block; 
+                    height:0; 
+                    clear:both; visibility: hidden;
+                }
+                .accountImg{
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: pink;
+                    margin-right: 10px;
+                }
+                .accountInfo{
+                    float: left;  
+                    .name{
+                        font-size: 16px;
+                        color: #666;
+                    }
+                    .department{
+                        font-size: 14px;
+                        color: #888;
+                    }
+                }
+            }
+        }
+        >a{
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .close{
+            color: red;
+            border-top: 1px solid #f2f5f9;
+        }
+    }
+}
